@@ -1,0 +1,161 @@
+/*-----------------------------------------------
+    $ Main
+-----------------------------------------------*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body,
+input,
+button,
+textarea {
+    font: 100%/1.4 "Source Sans Pro", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a,
+button {
+    transition: color 0.15s, background-color 0.15s;
+}
+
+/* General, main styles */
+
+.wrapper {
+    min-width: 290px;
+    max-width: 800px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Helpers */
+
+.text-giga { line-height: 1; font-size: 24px; font-weight: 300; }
+.inline { display: inline; }
+
+.pad-top    { padding-top: 1em; }
+.space-out { margin: 100px; }
+.space-bottom { margin-bottom: 1em; }
+
+
+/*-----------------------------------------------
+    $ Buttons
+-----------------------------------------------*/
+
+.btn {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    outline: 0;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.5);
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 44px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+.btn:active {
+    background-color: #777;
+    transition: none;
+}
+
+
+/*-----------------------------------------------
+    $ Cluster Menu
+-----------------------------------------------*/
+
+.menu-cluster-holder {
+    display: inline-block;
+    position: relative;
+}
+.menu-cluster {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.25s 0.4s;
+}
+    .menu-cluster > li {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        list-style: none;
+        transform: translate(0%) translateY(0%);
+        transition: transform 0.25s 0.4s, opacity 0.25s 0.4s;
+    }
+
+.menu-cluster-toggler {
+    position: absolute
+    z-index: 1;
+}
+
+/* .is-hovered is for the automatic JS demo,
+ * otherwise it is not needed. */
+.menu-cluster-toggler:hover + .menu-cluster,
+.menu-cluster:hover,
+.menu-cluster-toggler:hover + .menu-cluster > li,
+.menu-cluster:hover > li,
+.menu-cluster-toggler.is-hovered + .menu-cluster,
+.menu-cluster.is-hovered,
+.menu-cluster-toggler.is-hovered + .menu-cluster > li,
+.menu-cluster.is-hovered > li {
+    opacity: 1;
+    transition-delay: 0s;
+}
+.menu-cluster-toggler:hover + .menu-cluster > li,
+.menu-cluster:hover > li,
+.menu-cluster-toggler.is-hovered + .menu-cluster > li,
+.menu-cluster.is-hovered > li {
+    transform: translateX(0%) translateY(-125%);
+}
+
+.menu-cluster-toggler:hover + .menu-cluster > li:nth-child(2),
+.menu-cluster:hover > li:nth-child(2),
+.menu-cluster-toggler.is-hovered + .menu-cluster > li:nth-child(2),
+.menu-cluster.is-hovered > li:nth-child(2) {
+    transform: translateX(115%) translateY(-70%);
+}
+.menu-cluster-toggler:hover + .menu-cluster > li:nth-child(3),
+.menu-cluster:hover > li:nth-child(3),
+.menu-cluster-toggler.is-hovered + .menu-cluster > li:nth-child(3),
+.menu-cluster.is-hovered > li:nth-child(3) {
+    transform: translateX(115%) translateY(60%);
+}
+.menu-cluster-toggler:hover + .menu-cluster > li:nth-child(4),
+.menu-cluster:hover > li:nth-child(4),
+.menu-cluster-toggler.is-hovered + .menu-cluster > li:nth-child(4),
+.menu-cluster.is-hovered > li:nth-child(4) {
+    transform: translateX(0%) translateY(125%);
+}
+.menu-cluster-toggler:hover + .menu-cluster > li:nth-child(5),
+.menu-cluster:hover > li:nth-child(5),
+.menu-cluster-toggler.is-hovered + .menu-cluster > li:nth-child(5),
+.menu-cluster.is-hovered > li:nth-child(5) {
+    transform: translateX(-115%) translateY(60%);
+}
+.menu-cluster-toggler:hover + .menu-cluster > li:nth-child(6),
+.menu-cluster:hover > li:nth-child(6),
+.menu-cluster-toggler.is-hovered + .menu-cluster > li:nth-child(6),
+.menu-cluster.is-hovered > li:nth-child(6) {
+    transform: translateX(-115%) translateY(-70%);
+}
